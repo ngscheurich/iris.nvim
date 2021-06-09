@@ -50,7 +50,7 @@ An Iris palette is composed of a set of core colors based on the [base16] archit
 
 ### Conjuring
 
-There are a few methods with an Iris palette is brought forth, listed here in order of precedence:
+There are a few methods with which an Iris palette is brought forth, listed here in order of precedence:
 
 1. If you have created and specified a custom palette named the same as your colorscheme, Iris will use this data, filling in the gaps where necessary. A custom palette must define *at minimum* the sixteen core colors. You can see [my custom Tokyo Night palette] as an example.
 2. If the [nvim-base16] package is available and you are using a `base16-*` colorscheme, Iris will use the base16 colors defined by the package.
