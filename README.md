@@ -127,5 +127,5 @@ Pull requests and issues are welcome; please adhere to the [Code of Conduct].
 [galaxyline]: https://github.com/glepnir/galaxyline.nvim
 [Srcery]: https://github.com/srcery-colors/srcery-vim
 [lightline.vim]: https://github.com/itchyny/lightline.vim
-[tokyonight-palette]: https://github.com/ngscheurich/dotfiles/blob/main/nvim/.config/nvim/lua/pkg/conf/iris/tokyonight.lua
+[my custom Tokyo Night palette]: https://github.com/ngscheurich/dotfiles/blob/main/nvim/.config/nvim/lua/pkg/conf/iris/tokyonight.lua
 [Code of Conduct]: https://github.com/ngscheurich/iris.nvim/blob/main/CODE_OF_CONDUCT.md
