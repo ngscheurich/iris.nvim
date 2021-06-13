@@ -16,7 +16,8 @@ Iris is a [Neovim] plugin that generates a normalized color palette based on you
     - [Aliases](#aliases)
     - [Blends](#blends)
 - [Usage](#usage)
-- [Examples](#examples)
+  - [Portabilty](#portabilty)
+  - [Examples](#examples)
 - [Contributing](#contributing)
 
 ## Why?
@@ -105,7 +106,11 @@ require("iris").setup({
 })
 ```
 
-## Examples
+### Portabilty
+
+The `iris` module provides a `json` function that returns the current palette as a JSON-encoded string. This is handy for passing color settings off to external programs.
+
+### Examples
 
 - An [Iris callback](https://github.com/ngscheurich/dotfiles/blob/main/nvim/.config/nvim/lua/pkg/conf/iris/tmux.lua) and [shell script](https://github.com/ngscheurich/dotfiles/blob/main/bin/bin/tmux-theme) to keep tmux in sync with Neovim
 - An [Iris callback](https://github.com/ngscheurich/dotfiles/blob/main/nvim/.config/nvim/lua/pkg/conf/iris/kitty.lua) to keep kitty in sync with Neovim
