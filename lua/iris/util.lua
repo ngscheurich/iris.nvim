@@ -18,8 +18,8 @@ function util.set_highlight(group, opts)
   local bg = opts.bg or "NONE"
   local attrs = opts.attrs or "NONE"
 
-  local command = string.format("highlight %s gui=%s guifg=%s guibg=%s",
-    group, attrs, fg, bg)
+  local command = string.format("highlight %s gui=%s guifg=%s guibg=%s", group,
+                                attrs, fg, bg)
   vim.cmd(command)
 end
 

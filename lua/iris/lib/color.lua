@@ -11,7 +11,7 @@ local function hex_to_rgb(hex_str)
   hex_str = string.lower(hex_str)
 
   assert(string.find(hex_str, pat) ~= nil,
-    "hex_to_rgb: invalid hex_str: " .. tostring(hex_str))
+         "hex_to_rgb: invalid hex_str: " .. tostring(hex_str))
 
   local r, g, b = string.match(hex_str, pat)
   return {tonumber(r, 16), tonumber(g, 16), tonumber(b, 16)}
