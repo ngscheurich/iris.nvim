@@ -2,7 +2,7 @@
 
 <p align="center"><img src="img/iris.png" width="60%"></p>
 
-Iris is a [Neovim] package that generates a normalized color palette based on your colorscheme. It is named for the goddess [Iris] of Greek mythology, personification of the rainbow.
+Iris is a [Neovim] plugin that generates a normalized color palette based on your colorscheme. It is named for the goddess [Iris] of Greek mythology, personification of the rainbow.
 
 ## Table of Contents
 
@@ -38,11 +38,11 @@ By specifying a series of callback functions, you can leverage this palette to a
 
 ### Orthogonality
 
-A tenet of the [lightline.vim] package which I admire is the concept of package orthogonality. lightline.vim describes it thusly:
+A tenet of [lightline.vim] which I admire is the concept of plugin orthogonality. lightline.vim describes it thusly:
 
 > The plugin does not rely on the implementation of other plugins. Such plugin crossing settings should be configured by users.
  
-Iris extends this to external tools and, as such, includes no built-in color-changing functionality. Such behavior is beyond the scope and intent of this package, and is left to the end user to implement.
+Iris extends this to external tools and, as such, includes no built-in color-changing functionality. Such behavior is beyond the scope and intent of this plugin, and is left to the end user to implement.
 
 ## The Palette
 
@@ -53,7 +53,7 @@ An Iris palette is composed of a set of core colors based on the [base16] archit
 There are a few methods with which an Iris palette is brought forth, listed here in order of precedence:
 
 1. If you have created and specified a custom palette named the same as your colorscheme, Iris will use this data, filling in the gaps where necessary. A custom palette must define *at minimum* the sixteen core colors. You can see [my custom Tokyo Night palette] as an example.
-2. If the [nvim-base16] package is available and you are using a `base16-*` colorscheme, Iris will use the base16 colors defined by the package.
+2. If the [nvim-base16] plugin is available and you are using a `base16-*` colorscheme, Iris will use the base16 colors defined by the plugin.
 3. In every other scenario, the palette is derived from existing Neovim highlight groups. This *usually* works pretty well and makes Iris a hands-off solution in most cases.
 
 ### Colors
@@ -76,7 +76,7 @@ These are aliases for base colors that make the palette table easier to work wit
 
 These are derived by blending two colors together to varying degrees. For example, the `cursorline` color is `base07` blended with a bit of `base00`, making it just slightly brighter than the background.
 
-Shout out to [folke]’s [Tokyo Night] colorscheme for the blending functions used in this package.
+Shout out to [folke]’s [Tokyo Night] colorscheme for the blending functions used to implement this functionality.
 
 ## Usage
 
