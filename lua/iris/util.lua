@@ -1,9 +1,9 @@
 local util = {}
 
 --- Gets a highlight attribute.
--- @tparam string group The hightlight group
--- @tparam string attr The highlight attr
--- @return a hex color value
+-- @tparam string group The hightlight group.
+-- @tparam string attr The highlight attr.
+-- @treturn string Hex color value.
 function util.get_highlight(group, attr)
   local hl_id = vim.fn.hlID(group)
   local syntax_id = vim.fn.synIDtrans(hl_id)
@@ -11,8 +11,8 @@ function util.get_highlight(group, attr)
 end
 
 --- Sets a highlight group.
--- @tparam string group the hightlight group
--- @tparam table opts optional attributes to set
+-- @tparam string group The hightlight group.
+-- @tparam table opts Optional attributes to set.
 function util.set_highlight(group, opts)
   local fg = opts.fg or "NONE"
   local bg = opts.bg or "NONE"

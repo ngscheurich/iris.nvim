@@ -1,6 +1,5 @@
---- Functions adapted from folke's 'Tokyo Night' colorscheme
+--- Functions in this module adapted from folke's 'Tokyo Night' colorscheme.
 -- https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/util.lua
-
 local color = {}
 
 local black = "#000000"
@@ -19,9 +18,10 @@ local function hex_to_rgb(hex_str)
 end
 
 --- Blends one color into another.
--- @tparam string base hex value for the base color
--- @tparam string mod hex value for the color to blend into the base
--- @param amount a number between 0 and 1 representing the blend amount
+-- @tparam string base Hex value for the base color.
+-- @tparam string mod Hex value for the color to blend into the base.
+-- @tparam float Amount a number between 0 and 1 representing the blend amount.
+-- @treturn string The resulting color.
 function color.blend(base, mod, amount)
   base = hex_to_rgb(base)
   mod = hex_to_rgb(mod)

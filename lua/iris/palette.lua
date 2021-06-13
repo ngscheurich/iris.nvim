@@ -7,9 +7,9 @@ local palette = {}
 local g = vim.g
 local black = "#000000"
 
---- Returns the default color palette.
--- This palette is derived from standard Vim highlight groups.
--- @return table of color keys/values
+--- Returns the default core colors.
+-- These colors are derived from standard Vim highlight groups.
+-- @treturn table Map of base16 color names to color values.
 local function default()
   return {
     base00 = get("Normal", "bg"),
@@ -27,15 +27,15 @@ local function default()
     base0C = get("Special", "fg"),
     base0D = get("Function", "fg"),
     base0E = get("Statement", "fg"),
-    base0F = get("Delimiter", "fg")
+    base0F = get("Delimiter", "fg"),
   }
 end
 
---- Return a base16 color palette.
--- If the given colorscheme is not a base16 scheme or the 'base16-colorscheme'
--- package is unavailable, returns nil.
--- @param colorscheme name string of the colorscheme to check
--- @return table of color keys/values
+--- Returns base16 colors as defined in the 'base16-colorscheme' plugin.
+-- If given colorscheme does not match 'base16-*' or 'base16-colorscheme' is
+-- unavailable, returns nil.
+-- @tparam string colorscheme
+-- @return table or nil
 local function set_base16(colorscheme)
   local exists, base16 = pcall(require, "base16-colorscheme")
   local name = string.match(colorscheme, "base16--(.*)")
@@ -44,8 +44,8 @@ end
 
 --- Returns and sets a new color palette.
 -- Also sets the 'g:iris_palette' variable.
--- @tparam boolean regen return the current palette without generating a new one
--- @return table of color keys/values
+-- @tparam boolean regen If true, return the current palette without generating a new one.
+-- @treturn table Map of color names to values.
 function palette.get(regen)
   if not regen and g.iris_palette then return g.iris_palette end
 
@@ -88,7 +88,7 @@ function palette.get(regen)
     hint       = pal.base0C,
     info       = pal.base0D,
 
-    none = "NONE"
+    none       = "NONE",
   })
 
   g.iris_palette = iris_palette
@@ -97,8 +97,8 @@ function palette.get(regen)
 end
 
 --- Returns a function that can be used to get a palette color.
--- @tparam strinf name color name to get
--- @return function that accepts a color name param
+-- @tparam string name Name of color to get.
+-- @treturn function A function that accepts a color name param.
 function palette.get_color_fn(name)
   return function()
     local pal = palette.get()
