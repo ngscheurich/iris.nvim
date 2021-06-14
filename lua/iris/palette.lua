@@ -92,6 +92,12 @@ function palette.set(palettes)
   return iris_palette
 end
 
+--- Returns the current palette.
+-- @treturn table
+function palette.get()
+  return palette.current
+end
+
 --- Returns a function that can be used to get a palette color.
 -- @tparam string name Name of color to get.
 -- @treturn function A function that accepts a color name param.
