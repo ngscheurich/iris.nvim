@@ -33,12 +33,12 @@ end
 --- Returns base16 colors as defined in the 'base16-colorscheme' plugin.
 -- If given colorscheme does not match 'base16-*' or 'base16-colorscheme' is
 -- unavailable, returns nil.
--- @tparam string colorscheme
+-- @tparam string colorscheme The name of the base16 colorscheme.
 -- @return table or nil
-local function set_base16(colorscheme)
-  local exists, base16 = pcall(require, "base16-colorscheme")
+local function base16(colorscheme)
+  local exists, plugin = pcall(require, "base16-colorscheme")
   local name = string.match(colorscheme, "base16--(.*)")
-  if exists and name then return base16.colorschemes[name] end
+  if exists and name then return plugin.colorschemes[name] end
 end
 
 --- Returns and sets a new color palette.
@@ -100,7 +100,7 @@ end
 
 --- Returns a function that can be used to get a palette color.
 -- @tparam string name Name of color to get.
--- @treturn function A function that accepts a color name param.
+-- @treturn function
 function palette.get_color_fn(name)
   return function()
     local pal = palette.get()
