@@ -1,4 +1,3 @@
-local iris = require("iris")
 local blend = require("iris.lib.color").blend
 local get = require("iris.util").get_highlight
 
@@ -43,17 +42,14 @@ local function set_base16(colorscheme)
 end
 
 --- Returns and sets a new color palette.
--- Also sets the 'g:iris_palette' variable.
--- @tparam boolean regen If true, return the current palette without generating a new one.
+-- @tparam table palettes List of predefined palettes.
 -- @treturn table Map of color names to values.
-function palette.get(regen)
-  if not regen and g.iris_palette then return g.iris_palette end
-
+function palette.set(palettes)
   local colorscheme = g.colors_name
   if not colorscheme then return default() end
 
-  local pal = iris.palettes[colorscheme]
-  if not pal then pal = set_base16(colorscheme) end
+  local pal = palettes[colorscheme]
+  if not pal then pal = base16(colorscheme) end
   if not pal then pal = default() end
 
   local iris_palette = vim.tbl_extend("keep", pal, {
@@ -91,7 +87,7 @@ function palette.get(regen)
     none       = "NONE",
   })
 
-  g.iris_palette = iris_palette
+  palette.current = iris_palette
 
   return iris_palette
 end
